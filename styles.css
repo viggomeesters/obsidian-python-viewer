@@ -218,6 +218,14 @@
   background: color-mix(in srgb, var(--interactive-accent) 18%, transparent);
 }
 
+.python-viewer__source-row.has-diagnostic--error {
+  box-shadow: inset 3px 0 0 var(--python-viewer-error);
+}
+
+.python-viewer__source-row.has-diagnostic--warning {
+  box-shadow: inset 3px 0 0 var(--python-viewer-warning);
+}
+
 .python-viewer__line-number {
   border-right: 1px solid var(--python-viewer-border);
   color: var(--python-viewer-muted);
@@ -256,6 +264,15 @@
 
 .python-viewer__token-decorator {
   color: #be123c;
+}
+
+.python-viewer__token-definition {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.python-viewer__token-import {
+  color: #0f766e;
 }
 
 .python-viewer__token-constant {

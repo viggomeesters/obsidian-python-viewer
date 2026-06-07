@@ -163,7 +163,7 @@ class PythonViewerView extends TextFileView {
     }
 
     if (this.mode === "source") {
-      renderSource(container, parsed.renderedLines, this.filterValue, this.jumpLine);
+      renderSource(container, parsed.renderedLines, parsed.diagnostics, this.filterValue, this.jumpLine);
       this.scrollToJumpLine(container);
       return;
     }
@@ -370,6 +370,7 @@ function renderSymbol(
 function renderSource(
   parent: HTMLElement,
   lines: PythonLine[],
+  diagnostics: PythonDiagnostic[],
   query: string,
   jumpLine: number | null,
 ): void {
@@ -384,9 +385,15 @@ function renderSource(
   }
 
   const source = parent.createDiv({ cls: "python-viewer__source" });
+  const diagnosticLines = new Map(diagnostics.map((diagnostic) => [diagnostic.lineNumber, diagnostic.severity]));
   visibleLines.forEach((line) => {
+    const severity = diagnosticLines.get(line.lineNumber);
     const row = source.createDiv({
-      cls: `python-viewer__source-row ${jumpLine === line.lineNumber ? "is-jump-target" : ""}`,
+      cls: [
+        "python-viewer__source-row",
+        jumpLine === line.lineNumber ? "is-jump-target" : "",
+        severity ? `has-diagnostic has-diagnostic--${severity}` : "",
+      ].filter(Boolean).join(" "),
       attr: { "data-line": String(line.lineNumber) },
     });
     row.createDiv({ cls: "python-viewer__line-number", text: String(line.lineNumber) });
@@ -409,22 +416,26 @@ function renderHighlightedLine(parent: HTMLElement, raw: string): void {
 }
 
 function renderCodePart(parent: HTMLElement, text: string): void {
-  const pattern = /(@[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b|'''|"""|'[^']*'|"[^"]*")/g;
+  const definitionNames = new Set(Array.from(text.matchAll(/\b(?:async\s+def|def|class)\s+([A-Za-z_]\w*)/g)).map((match) => match[1]));
+  const importNames = new Set(Array.from(text.matchAll(/\b(?:import|from|as)\s+([A-Za-z_][\w.]*)/g)).map((match) => match[1]));
+  const pattern = /(@[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)*|\b\d+(?:\.\d+)?\b|\b[A-Za-z_][\w.]*\b|'''|"""|'[^']*'|"[^"]*")/g;
   let lastIndex = 0;
   for (const match of text.matchAll(pattern)) {
     const token = match[0];
     const index = match.index ?? 0;
     if (index > lastIndex) parent.createSpan({ text: text.slice(lastIndex, index) });
-    parent.createSpan({ cls: tokenClass(token), text: token });
+    parent.createSpan({ cls: tokenClass(token, definitionNames, importNames), text: token });
     lastIndex = index + token.length;
   }
   if (lastIndex < text.length) parent.createSpan({ text: text.slice(lastIndex) });
 }
 
-function tokenClass(token: string): string {
+function tokenClass(token: string, definitionNames: Set<string>, importNames: Set<string>): string {
   if (token.startsWith("@")) return "python-viewer__token-decorator";
   if (token.startsWith("'") || token.startsWith("\"")) return "python-viewer__token-string";
   if (/^\d/.test(token)) return "python-viewer__token-number";
+  if (definitionNames.has(token)) return "python-viewer__token-definition";
+  if (importNames.has(token)) return "python-viewer__token-import";
   if (KEYWORDS.has(token)) return "python-viewer__token-keyword";
   if (/^[A-Z_][A-Z0-9_]*$/.test(token)) return "python-viewer__token-constant";
   return "python-viewer__token-name";
