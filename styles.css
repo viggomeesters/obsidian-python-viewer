@@ -1,0 +1,295 @@
+.python-viewer {
+  --python-viewer-border: var(--background-modifier-border);
+  --python-viewer-muted: var(--text-muted);
+  --python-viewer-accent: var(--interactive-accent);
+  --python-viewer-bg: var(--background-primary);
+  --python-viewer-row: var(--background-secondary);
+  --python-viewer-warning: #b45309;
+  --python-viewer-error: #b91c1c;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  overflow: auto;
+  padding: 16px;
+}
+
+.python-viewer__header {
+  align-items: flex-start;
+  border-bottom: 1px solid var(--python-viewer-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+.python-viewer__title {
+  min-width: 220px;
+}
+
+.python-viewer__filename {
+  color: var(--text-normal);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.python-viewer__path {
+  color: var(--python-viewer-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.python-viewer__toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.python-viewer__search {
+  align-items: center;
+  border: 1px solid var(--python-viewer-border);
+  border-radius: 6px;
+  display: flex;
+  gap: 6px;
+  min-width: 220px;
+  padding: 4px 8px;
+}
+
+.python-viewer__search input {
+  background: transparent;
+  border: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.python-viewer__search-icon {
+  color: var(--python-viewer-muted);
+  display: inline-flex;
+}
+
+.python-viewer__segmented {
+  border: 1px solid var(--python-viewer-border);
+  border-radius: 6px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.python-viewer__text-button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  min-height: 30px;
+  padding: 4px 10px;
+}
+
+.python-viewer__text-button.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.python-viewer__button {
+  border-radius: 6px;
+}
+
+.python-viewer__summary {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.python-viewer__pill,
+.python-viewer__note {
+  background: var(--background-secondary);
+  border: 1px solid var(--python-viewer-border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px 8px;
+}
+
+.python-viewer__note {
+  color: var(--python-viewer-warning);
+}
+
+.python-viewer__diagnostics,
+.python-viewer__warnings {
+  border: 1px solid var(--python-viewer-border);
+  border-radius: 8px;
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+}
+
+.python-viewer__diagnostics-title,
+.python-viewer__warnings-title,
+.python-viewer__section-title {
+  color: var(--text-normal);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.python-viewer__diagnostic,
+.python-viewer__warning,
+.python-viewer__diagnostic-more,
+.python-viewer__warning-more {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.python-viewer__diagnostic--error {
+  color: var(--python-viewer-error);
+}
+
+.python-viewer__body {
+  display: grid;
+  gap: 14px;
+}
+
+.python-viewer__symbol-section {
+  display: grid;
+  gap: 6px;
+}
+
+.python-viewer__symbol {
+  align-items: center;
+  background: var(--python-viewer-row);
+  border: 1px solid var(--python-viewer-border);
+  border-radius: 8px;
+  color: var(--text-normal);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 56px 90px minmax(160px, 1fr) minmax(140px, 0.7fr);
+  min-height: 38px;
+  padding: 7px 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.python-viewer__symbol:hover {
+  border-color: var(--python-viewer-accent);
+}
+
+.python-viewer__symbol-line,
+.python-viewer__symbol-kind,
+.python-viewer__symbol-detail,
+.python-viewer__symbol-parent,
+.python-viewer__symbol-decorators {
+  color: var(--python-viewer-muted);
+  font-size: 12px;
+}
+
+.python-viewer__symbol-name {
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.python-viewer__symbol-detail {
+  font-family: var(--font-monospace);
+  overflow-wrap: anywhere;
+}
+
+.python-viewer__source {
+  border: 1px solid var(--python-viewer-border);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.python-viewer__source-row {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  min-height: 24px;
+}
+
+.python-viewer__source-row:nth-child(odd) {
+  background: color-mix(in srgb, var(--background-secondary) 55%, transparent);
+}
+
+.python-viewer__source-row.is-jump-target {
+  background: color-mix(in srgb, var(--interactive-accent) 18%, transparent);
+}
+
+.python-viewer__line-number {
+  border-right: 1px solid var(--python-viewer-border);
+  color: var(--python-viewer-muted);
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  padding: 4px 8px;
+  text-align: right;
+  user-select: none;
+}
+
+.python-viewer__code {
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  padding: 4px 10px;
+  white-space: pre-wrap;
+}
+
+.python-viewer__token-comment {
+  color: #64748b;
+}
+
+.python-viewer__token-keyword {
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+.python-viewer__token-string {
+  color: #047857;
+}
+
+.python-viewer__token-number {
+  color: #b45309;
+}
+
+.python-viewer__token-decorator {
+  color: #be123c;
+}
+
+.python-viewer__token-constant {
+  color: #0369a1;
+}
+
+.python-viewer__token-name {
+  color: var(--text-normal);
+}
+
+.python-viewer__message {
+  border: 1px dashed var(--python-viewer-border);
+  border-radius: 8px;
+  color: var(--python-viewer-muted);
+  padding: 18px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .python-viewer {
+    padding: 12px;
+  }
+
+  .python-viewer__toolbar,
+  .python-viewer__search {
+    width: 100%;
+  }
+
+  .python-viewer__symbol {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .python-viewer__symbol-main,
+  .python-viewer__symbol-detail {
+    grid-column: 1 / -1;
+  }
+}

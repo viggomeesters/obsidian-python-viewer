@@ -1,0 +1,10 @@
+{
+  "id": "python-viewer",
+  "name": "Python Viewer",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Open .py files as a read-only source and structure view with symbols, search, and parse diagnostics.",
+  "author": "Viggo Meesters",
+  "authorUrl": "https://github.com/viggomeesters",
+  "isDesktopOnly": false
+}
