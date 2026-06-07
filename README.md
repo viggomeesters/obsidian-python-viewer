@@ -1,6 +1,19 @@
+<p align="center">
+  <img src="assets/hero.svg" alt="Python Viewer" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/viggomeesters/obsidian-python-viewer/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/viggomeesters/obsidian-python-viewer?style=flat-square"></a>
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-green?style=flat-square"></a>
+  <img alt="Minimum app version 1.5.0+" src="https://img.shields.io/badge/minimum-1.5.0%2B-7c3aed?style=flat-square">
+  <img alt="Read-only" src="https://img.shields.io/badge/mode-read--only-0f766e?style=flat-square">
+</p>
+
 # Python Viewer
 
 Python Viewer is a read-only plugin for browsing `.py` files as source plus a compact structure outline. It is built for quick inspection of scripts, generated code, migration utilities, and agent output without turning the vault into an IDE.
+
+![Python Viewer preview](assets/screenshot.svg)
 
 ## Features
 
@@ -34,18 +47,27 @@ Python Viewer does not make network requests and does not send vault content to 
 
 ## Installation
 
+### Community plugin directory
+
+Python Viewer is ready for Community plugin directory submission. Once accepted, it can be installed from **Settings -> Community plugins -> Browse**.
+
 ### Manual installation
 
-1. Build the plugin:
+Until the community directory submission is accepted:
 
-```bash
-npm install
-npm run build
+1. Download `main.js`, `manifest.json`, and `styles.css` from the [latest release](https://github.com/viggomeesters/obsidian-python-viewer/releases/latest).
+2. Create this folder in your vault: `.obsidian/plugins/python-viewer/`.
+3. Put the downloaded files in that folder.
+4. Reload the app.
+5. Enable **Python Viewer** in **Settings -> Community plugins**.
+
+### BRAT installation
+
+For beta testing, install the plugin with [BRAT](https://github.com/TfTHacker/obsidian42-brat) using this repository URL:
+
+```text
+https://github.com/viggomeesters/obsidian-python-viewer
 ```
-
-2. Copy `main.js`, `manifest.json`, and `styles.css` into `.obsidian/plugins/python-viewer/`.
-3. Reload the app.
-4. Enable **Python Viewer** in **Settings -> Community plugins**.
 
 ## Usage
 
@@ -73,6 +95,49 @@ The runtime files are:
 - `main.js`
 - `manifest.json`
 - `styles.css`
+
+## Release process
+
+Community plugin files are installed from GitHub releases. For each release:
+
+1. Update `manifest.json`, `package.json`, and `versions.json`.
+2. Run `npm install`, `npm run build`, `npx tsc --noEmit`, and `npm test`.
+3. Create a GitHub release whose tag exactly matches `manifest.json.version`.
+4. Attach `main.js`, `manifest.json`, and `styles.css` as release assets.
+
+The repository includes a GitHub Actions release workflow with artifact attestation support. If GitHub Actions is disabled for the owner account, manual releases are still usable, but automated review may show a recommendation about missing artifact attestations.
+
+## Community directory submission
+
+The repository is prepared for Community plugin submission. The remaining submission step must be completed by the repository owner because it requires signing in, linking GitHub, and confirming the developer policies/support commitment.
+
+Submit this repository URL:
+
+```text
+https://github.com/viggomeesters/obsidian-python-viewer
+```
+
+Steps:
+
+1. Sign in to [community.obsidian.md](https://community.obsidian.md).
+2. Link the GitHub account that owns this repository.
+3. Open **Plugins -> New plugin**.
+4. Enter the repository URL above.
+5. Confirm the developer policies and submit.
+6. Address any automated review feedback.
+
+The current release is ready for review:
+
+- root `README.md`, `LICENSE`, and `manifest.json` exist
+- `manifest.json.version` is `0.1.0`
+- GitHub release `0.1.0` exists
+- release assets include `main.js`, `manifest.json`, and `styles.css`
+- `versions.json` maps supported app versions
+
+Official references:
+
+- [Submit your plugin](https://docs.obsidian.md/Plugins/Releasing/Submit%20your%20plugin)
+- [Obsidian releases repository](https://github.com/obsidianmd/obsidian-releases)
 
 ## License
 

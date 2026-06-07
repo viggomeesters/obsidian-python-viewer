@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Python Viewer screenshot</title>
+  <desc id="desc">A Python structure view with toolbar, summary pills, imports and symbols.</desc>
+  <rect width="1280" height="760" fill="#1f2026"/>
+  <rect x="48" y="40" width="1184" height="680" rx="16" fill="#23242a" stroke="#3c3d45"/>
+  <rect x="48" y="40" width="1184" height="58" rx="16" fill="#2a2b31"/>
+  <circle cx="80" cy="69" r="8" fill="#ff5f57"/>
+  <circle cx="106" cy="69" r="8" fill="#ffbd2e"/>
+  <circle cx="132" cy="69" r="8" fill="#28c840"/>
+  <text x="86" y="144" fill="#f4f4f5" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="750">agent_script.py</text>
+  <text x="86" y="174" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">20_files/2026-06/agent_script.py</text>
+  <rect x="716" y="126" width="210" height="32" rx="7" fill="#191b20" stroke="#45454c"/>
+  <text x="742" y="147" fill="#d4d4d8" font-family="Inter, Arial, sans-serif" font-size="13">Filter</text>
+  <rect x="940" y="126" width="96" height="32" rx="7" fill="#3b82f6"/>
+  <text x="960" y="147" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Structure</text>
+  <rect x="1044" y="126" width="82" height="32" rx="7" fill="#27272a" stroke="#45454c"/>
+  <text x="1065" y="147" fill="#d4d4d8" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Source</text>
+  <rect x="86" y="206" width="88" height="28" rx="14" fill="#191b20" stroke="#3c3d45"/>
+  <text x="106" y="225" fill="#d4d4d8" font-family="Menlo, Consolas, monospace" font-size="13">92 lines</text>
+  <rect x="186" y="206" width="104" height="28" rx="14" fill="#191b20" stroke="#3c3d45"/>
+  <text x="206" y="225" fill="#d4d4d8" font-family="Menlo, Consolas, monospace" font-size="13">8 symbols</text>
+  <rect x="302" y="206" width="134" height="28" rx="14" fill="#191b20" stroke="#3c3d45"/>
+  <text x="322" y="225" fill="#d4d4d8" font-family="Menlo, Consolas, monospace" font-size="13">0 diagnostics</text>
+  <text x="86" y="274" fill="#f4f4f5" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="750">Imports</text>
+  <rect x="86" y="296" width="1094" height="52" rx="10" fill="#34363d" stroke="#4b4d56"/>
+  <text x="116" y="328" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">1</text>
+  <text x="184" y="328" fill="#d4d4d8" font-family="Inter, Arial, sans-serif" font-size="14">Import</text>
+  <text x="320" y="328" fill="#f8fafc" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="700">pathlib</text>
+  <text x="860" y="328" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">from pathlib import Path</text>
+  <text x="86" y="392" fill="#f4f4f5" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="750">Classes</text>
+  <rect x="86" y="414" width="1094" height="52" rx="10" fill="#34363d" stroke="#4b4d56"/>
+  <text x="116" y="446" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">7</text>
+  <text x="184" y="446" fill="#d4d4d8" font-family="Inter, Arial, sans-serif" font-size="14">Class</text>
+  <text x="320" y="446" fill="#60a5fa" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="700">MigrationJob</text>
+  <text x="860" y="446" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">class MigrationJob:</text>
+  <text x="86" y="510" fill="#f4f4f5" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="750">Functions</text>
+  <rect x="86" y="532" width="1094" height="52" rx="10" fill="#34363d" stroke="#4b4d56"/>
+  <text x="116" y="564" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">21</text>
+  <text x="184" y="564" fill="#d4d4d8" font-family="Inter, Arial, sans-serif" font-size="14">Function</text>
+  <text x="320" y="564" fill="#34d399" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="700">load_config</text>
+  <text x="860" y="564" fill="#a7a7ad" font-family="Menlo, Consolas, monospace" font-size="14">def load_config(path: Path):</text>
+</svg>

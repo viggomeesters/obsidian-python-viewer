@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Python Viewer social preview</title>
+  <desc id="desc">A social preview image for Python Viewer.</desc>
+  <rect width="1280" height="640" fill="#17181c"/>
+  <rect x="72" y="72" width="1136" height="496" rx="28" fill="#22242b" stroke="#3b3d45"/>
+  <text x="128" y="188" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800">Python Viewer</text>
+  <text x="132" y="244" fill="#a7a7ad" font-family="Inter, Arial, sans-serif" font-size="28">Read-only source and structure for `.py` files</text>
+  <g transform="translate(132 326)">
+    <rect width="1016" height="128" rx="16" fill="#111827" stroke="#3b3d45"/>
+    <text x="36" y="52" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="22">def</text>
+    <text x="88" y="52" fill="#60a5fa" font-family="Menlo, Consolas, monospace" font-size="22" font-weight="700">load_config</text>
+    <text x="246" y="52" fill="#e5e7eb" font-family="Menlo, Consolas, monospace" font-size="22">(path: Path):</text>
+    <text x="36" y="92" fill="#94a3b8" font-family="Menlo, Consolas, monospace" font-size="22"># outline, filter, diagnostics, no execution</text>
+  </g>
+</svg>

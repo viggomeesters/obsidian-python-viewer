@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420" role="img" aria-labelledby="title desc">
+  <title id="title">Python Viewer</title>
+  <desc id="desc">A dark app-style hero showing a Python source and structure preview.</desc>
+  <rect width="1400" height="420" fill="#17181c"/>
+  <rect x="48" y="48" width="1304" height="324" rx="18" fill="#202126" stroke="#3b3d45"/>
+  <rect x="48" y="48" width="1304" height="52" rx="18" fill="#26272d"/>
+  <circle cx="82" cy="74" r="8" fill="#ff5f57"/>
+  <circle cx="108" cy="74" r="8" fill="#ffbd2e"/>
+  <circle cx="134" cy="74" r="8" fill="#28c840"/>
+  <text x="80" y="164" fill="#f4f4f5" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="750">Python Viewer</text>
+  <text x="82" y="206" fill="#a7a7ad" font-family="Inter, Arial, sans-serif" font-size="20">Read-only source and structure for Python files</text>
+  <g transform="translate(82 248)">
+    <rect width="112" height="34" rx="8" fill="#3b82f6"/>
+    <text x="25" y="23" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Structure</text>
+    <rect x="124" width="92" height="34" rx="8" fill="#27272a" stroke="#45454c"/>
+    <text x="145" y="23" fill="#d4d4d8" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Source</text>
+    <rect x="228" width="112" height="34" rx="8" fill="#17251e" stroke="#28684a"/>
+    <text x="250" y="23" fill="#62d88f" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Read-only</text>
+  </g>
+  <g transform="translate(704 112)">
+    <rect width="576" height="240" rx="12" fill="#111827" stroke="#3b3d45"/>
+    <rect x="24" y="22" width="528" height="40" rx="8" fill="#29313f"/>
+    <text x="48" y="48" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="15">line</text>
+    <text x="118" y="48" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="15">kind</text>
+    <text x="242" y="48" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="15">symbol</text>
+    <g font-family="Menlo, Consolas, monospace" font-size="15">
+      <text x="48" y="94" fill="#a7a7ad">1</text><text x="118" y="94" fill="#d4d4d8">Import</text><text x="242" y="94" fill="#f8fafc">pathlib</text>
+      <text x="48" y="134" fill="#a7a7ad">4</text><text x="118" y="134" fill="#d4d4d8">Class</text><text x="242" y="134" fill="#60a5fa">MigrationJob</text>
+      <text x="48" y="174" fill="#a7a7ad">9</text><text x="118" y="174" fill="#d4d4d8">Method</text><text x="242" y="174" fill="#34d399">run</text>
+      <text x="48" y="214" fill="#a7a7ad">17</text><text x="118" y="214" fill="#d4d4d8">Function</text><text x="242" y="214" fill="#34d399">load_config</text>
+    </g>
+    <g stroke="#29313f">
+      <line x1="90" y1="22" x2="90" y2="224"/>
+      <line x1="214" y1="22" x2="214" y2="224"/>
+      <line x1="24" y1="74" x2="552" y2="74"/>
+      <line x1="24" y1="114" x2="552" y2="114"/>
+      <line x1="24" y1="154" x2="552" y2="154"/>
+      <line x1="24" y1="194" x2="552" y2="194"/>
+    </g>
+  </g>
+</svg>
