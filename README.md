@@ -112,3 +112,6 @@ Python Viewer is listed in the [Obsidian Community directory](https://community.
 ## License
 
 [MIT](LICENSE)
+
+
+[Obsidian 1.15.1 assessment: checked source, local results and remaining host validation](docs/obsidian-1.15.1.md).
